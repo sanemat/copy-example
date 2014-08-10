@@ -1,0 +1,32 @@
+
+$ chmod -R go-rwx .
+
+```text
+$ ls -alR
+total 16
+drwx------   7 sane  staff  238  8 10 21:27 .
+drwxr-xr-x   5 sane  staff  170  8 10 21:16 ..
+drwx------  12 sane  staff  408  8 10 21:27 .git
+drwx------  10 sane  staff  340  8 10 21:27 .idea
+-rw-------   1 sane  staff  265  8 10 21:24 Dockerfile
+drwx------   4 sane  staff  136  8 10 21:17 parent-dir
+-rw-------   1 sane  staff   29  8 10 21:27 reproduce.txt
+
+(snip)
+
+./parent-dir:
+total 8
+drwx------  4 sane  staff  136  8 10 21:17 .
+drwx------  7 sane  staff  238  8 10 21:27 ..
+drwx------  3 sane  staff  102  8 10 21:18 child-dir
+-rw-------  1 sane  staff    7  8 10 21:17 parent.txt
+
+./parent-dir/child-dir:
+total 8
+drwx------  3 sane  staff  102  8 10 21:18 .
+drwx------  4 sane  staff  136  8 10 21:17 ..
+-rw-------  1 sane  staff    6  8 10 21:18 child.txt
+```
+
+$ docker build -t sanemat/copy-example .
+$ docker run -t -i sanemat/copy-example:latest /bin/bash
