@@ -50,3 +50,16 @@ $ docker run -t -i sanemat/copy-example:latest /bin/bash
 ```text
 bash: cd: /code/parent/child-dir: Permission denied
 ```
+
+$ docker version
+
+```text
+Client version: 1.1.2
+Client API version: 1.13
+Go version (client): go1.2.1
+Git commit (client): d84a070
+Server version: 1.1.2
+Server API version: 1.13
+Go version (server): go1.2.1
+Git commit (server): d84a070
+```
