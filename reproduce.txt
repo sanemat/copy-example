@@ -1,8 +1,10 @@
-
+$ git clone https://github.com/sanemat/copy-example.git
+$ cd copy-example
 $ chmod -R go-rwx .
 
-```text
 $ ls -alR
+
+```text
 total 16
 drwx------   7 sane  staff  238  8 10 21:27 .
 drwxr-xr-x   5 sane  staff  170  8 10 21:16 ..
@@ -30,3 +32,21 @@ drwx------  4 sane  staff  136  8 10 21:17 ..
 
 $ docker build -t sanemat/copy-example .
 $ docker run -t -i sanemat/copy-example:latest /bin/bash
+
+% ls -alR /code/parent/
+
+```text
+  /code/parent/:
+  total 16
+  drwxrwxrwx 4 root root 4096 Aug 10 12:49 .
+  drwxrwxrwx 4 root root 4096 Aug 10 12:49 ..
+  drwxrwxrwx 2 root root 4096 Aug 10 12:49 child-dir
+  -rwxrwxrwx 1 root root    7 Aug 10 12:48 parent.txt
+  ls: cannot open directory /code/parent/child-dir: Permission denied
+```
+
+% cd /code/parent/child-dir
+
+```text
+bash: cd: /code/parent/child-dir: Permission denied
+```
